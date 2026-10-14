@@ -1,0 +1,42 @@
+=========================================================================
+ATTRAVERSO MADDALONI - EDITOR DI LAYOUT NATIVO
+=========================================================================
+Questo software è un prodotto digitale originale sviluppato nell'ambito
+della tesi di laurea triennale in Design della Comunicazione Visiva
+presso l'Accademia di Belle Arti di Napoli (ABANA).
+
+Progetto, Ricerca e Sviluppo: Domenico Mataluna (Tesista)
+Relatrice: Prof.ssa Paola Tuccillo
+Co-relatore: Alessandro Tartaglia
+Anno Accademico / Data di Rilascio: 2026
+
+=========================================================================
+TUTELA LEGALE E DIRITTO D'AUTORE
+=========================================================================
+© 2026 Domenico Mataluna. Tutti i diritti riservati.
+
+Tutti gli asset, i vincoli logici di layout, i motori di generazione,
+il codice sorgente (HTML, CSS, JS) e le integrazioni del carattere 
+tipografico "Mataluna" sono di proprietà esclusiva dell'autore e sono
+tutelati dalla normativa internazionale sul Diritto d'Autore.
+
+Il presente software è concesso in uso gratuito esclusivamente per 
+scopi non commerciali, accademici o istituzionali preventivamente autorizzati, 
+ma NON è definibile come "Open Source" (secondo la Open Source Initiative), 
+in quanto sono in vigore restrizioni specifiche.
+
+È SEVERAMENTE VIETATO:
+1. Copiare, clonare, riprodurre o ridistribuire questo codice (o parti di esso)
+   senza l'autorizzazione scritta dell'autore.
+2. Utilizzare il software, le sue meccaniche o il codice sorgente per 
+   scopi commerciali, di lucro o per l'addestramento di modelli di Intelligenza Artificiale.
+3. Modificare, decodificare (reverse engineering), rivendere o 
+   ri-distribuire il software.
+4. Rimuovere, nascondere o alterare la presente nota di copyright nei file sorgente.
+
+Qualsiasi utilizzo non espressamente autorizzato per iscritto dall'autore 
+sarà perseguibile a norma di legge e comporterà l'immediata revoca dei 
+diritti di utilizzo.
+
+Per richieste di utilizzo, licenze o collaborazioni, contattare l'autore.
+=========================================================================

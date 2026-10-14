@@ -1,0 +1,33 @@
+# Attraverso Maddaloni — Identità di Carattere
+> Un protocollo metodologico di brand urbano nato dall'incrocio tra la stratificazione storico-visiva e la percezione reale dei cittadini di Maddaloni (CE).
+
+## Informazioni Sintetiche sul Progetto
+- **Titolo Tesi**: Identità di carattere. Tipografia e sistemi visivi partecipati per la comunicazione pubblica a Maddaloni
+- **Autore**: Domenico Mataluna
+- **Disciplina**: Design della Comunicazione / Place Branding / Tipografia Partecipata
+- **Oggetto dello Studio**: Studio pilota su Maddaloni (Caserta, Italia) articolato in 3 fasi: analisi storico-visiva, percezione urbana partecipata e sintesi visiva con carattere tipografico nativo (Tifata).
+
+## Protocollo Metodologico in 3 Fasi
+1. **Fase 1 — Analisi storico-visiva e fonti araldiche**:
+   - Decostruzione degli elementi araldici locali (ricostruzione dell'ing. Ignarra del 1939, opere di Franco Imposimato, testimonianze epigrafiche del Convitto Nazionale "Giordano Bruno").
+   - Astrazione di un codice visivo monumentale e calligrafico.
+
+2. **Fase 2 — Progettazione partecipata e percezione urbana**:
+   - **Sondaggio Percettivo**: 346+ rispondenti tra i cittadini (analisi semantica Osgood su polarità come Ruvida/Accogliente, Antica/Contemporanea, Popolare/Sofisticata, Pesante/Leggera).
+   - **Laboratorio/Workshop nelle Scuole**: 19 studenti tra 14 e 18 anni hanno mappato 22 luoghi urbani associando forme geometriche ed emozioni (Socialità, Tensione, Dovere).
+
+3. **Fase 3 — Sintesi Visiva e Carattere Tifata**:
+   - **Tifata Variable Font**: Carattere tipografico variabile nativo ispirato alle epigrafi storiche e ai manoscritti del Convitto.
+   - **Brand System**: Sistema di comunicazione visiva flessibile e rigenerativo per le istituzioni e la comunità di Maddaloni.
+   - **Editor Locandine Istituzionali**: Strumento aperto per generare comunicazione pubblica coordinata.
+
+## Pagine e Risorse Chiave
+- [Home Page](https://attraversomaddaloni.it/): Presentazione generale del protocollo e interventi in evidenza.
+- [Il Metodo e le Fasi](https://attraversomaddaloni.it/progetto): Timeline interattiva e approfondimenti sulle 3 fasi di ricerca.
+- [Stemmi e Ricostruzioni](https://attraversomaddaloni.it/progetto/stemmi): Archivio storico-araldico e tavole di Franco Imposimato.
+- [Il Sondaggio Percettivo](https://attraversomaddaloni.it/progetto/sondaggio): Dashboard interattiva sui 346+ dati dei cittadini (Osgood, Personaggi, Lessico).
+- [Le Lezioni con i Ragazzi](https://attraversomaddaloni.it/progetto/lezioni): Mappa cognitiva dei 22 luoghi urbani e percezioni dei giovani.
+- [Il Carattere Tifata](https://attraversomaddaloni.it/progetto/carattere): Type tester interattivo per il Variable Font Tifata.
+- [Il Brand System](https://attraversomaddaloni.it/progetto/brand): Regole del sistema visivo e composizioni grafiche.
+- [Risorse e Download](https://attraversomaddaloni.it/risorse): Download degli asset grafici e del font Tifata.
+- [Strumenti e Generatore](https://attraversomaddaloni.it/strumenti): Editor aperto per locandine pubbliche istituzionali.

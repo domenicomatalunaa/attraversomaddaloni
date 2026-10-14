@@ -1,0 +1,212 @@
+[
+  {
+    "Studente": "S1",
+    "Quadrati": "5",
+    "Cerchi": "10",
+    "Triangoli": "4",
+    "Emozione": "Ansia/Disordine",
+    "Emozione secondaria": "Curiosità/Potenziale",
+    "Forma emozione": "Quadrato",
+    "Forma secondaria": ""
+  },
+  {
+    "Studente": "S2",
+    "Quadrati": "5",
+    "Cerchi": "10",
+    "Triangoli": "4",
+    "Emozione": "Ansia/Disordine",
+    "Emozione secondaria": "",
+    "Forma emozione": "Triangolo",
+    "Forma secondaria": ""
+  },
+  {
+    "Studente": "S3",
+    "Quadrati": "5",
+    "Cerchi": "10",
+    "Triangoli": "5",
+    "Emozione": "Sicurezza/Appartenenza",
+    "Emozione secondaria": "Curiosità/Potenziale",
+    "Forma emozione": "Triangolo",
+    "Forma secondaria": ""
+  },
+  {
+    "Studente": "S4",
+    "Quadrati": "5",
+    "Cerchi": "10",
+    "Triangoli": "5",
+    "Emozione": "Sicurezza/Appartenenza",
+    "Emozione secondaria": "Curiosità/Potenziale",
+    "Forma emozione": "Quadrato",
+    "Forma secondaria": ""
+  },
+  {
+    "Studente": "S5",
+    "Quadrati": "5",
+    "Cerchi": "4",
+    "Triangoli": "4",
+    "Emozione": "Curiosità/Potenziale",
+    "Emozione secondaria": "",
+    "Forma emozione": "Quadrato",
+    "Forma secondaria": ""
+  },
+  {
+    "Studente": "S6",
+    "Quadrati": "2",
+    "Cerchi": "5",
+    "Triangoli": "4",
+    "Emozione": "Curiosità/Potenziale",
+    "Emozione secondaria": "",
+    "Forma emozione": "Cerchio",
+    "Forma secondaria": ""
+  },
+  {
+    "Studente": "S7",
+    "Quadrati": "2",
+    "Cerchi": "7",
+    "Triangoli": "4",
+    "Emozione": "Ansia/Disordine",
+    "Emozione secondaria": "Noia/Apatia",
+    "Forma emozione": "Quadrato",
+    "Forma secondaria": ""
+  },
+  {
+    "Studente": "S8",
+    "Quadrati": "3",
+    "Cerchi": "7",
+    "Triangoli": "5",
+    "Emozione": "Ansia/Disordine",
+    "Emozione secondaria": "Curiosità/Potenziale",
+    "Forma emozione": "Quadrato",
+    "Forma secondaria": ""
+  },
+  {
+    "Studente": "S9",
+    "Quadrati": "4",
+    "Cerchi": "8",
+    "Triangoli": "3",
+    "Emozione": "Ansia/Disordine",
+    "Emozione secondaria": "Curiosità/Potenziale",
+    "Forma emozione": "Quadrato",
+    "Forma secondaria": ""
+  },
+  {
+    "Studente": "S10",
+    "Quadrati": "4",
+    "Cerchi": "8",
+    "Triangoli": "3",
+    "Emozione": "Ansia/Disordine",
+    "Emozione secondaria": "Curiosità/Potenziale",
+    "Forma emozione": "Quadrato",
+    "Forma secondaria": ""
+  },
+  {
+    "Studente": "S11",
+    "Quadrati": "5",
+    "Cerchi": "5",
+    "Triangoli": "4",
+    "Emozione": "Ansia/Disordine",
+    "Emozione secondaria": "",
+    "Forma emozione": "Triangolo",
+    "Forma secondaria": ""
+  },
+  {
+    "Studente": "S12",
+    "Quadrati": "5",
+    "Cerchi": "5",
+    "Triangoli": "4",
+    "Emozione": "Ansia/Disordine",
+    "Emozione secondaria": "",
+    "Forma emozione": "Quadrato",
+    "Forma secondaria": ""
+  },
+  {
+    "Studente": "S13",
+    "Quadrati": "9",
+    "Cerchi": "9",
+    "Triangoli": "5",
+    "Emozione": "Curiosità/Potenziale",
+    "Emozione secondaria": "",
+    "Forma emozione": "Cerchio",
+    "Forma secondaria": ""
+  },
+  {
+    "Studente": "S14",
+    "Quadrati": "9",
+    "Cerchi": "9",
+    "Triangoli": "5",
+    "Emozione": "Curiosità/Potenziale",
+    "Emozione secondaria": "",
+    "Forma emozione": "Cerchio",
+    "Forma secondaria": ""
+  },
+  {
+    "Studente": "S15",
+    "Quadrati": "3",
+    "Cerchi": "9",
+    "Triangoli": "4",
+    "Emozione": "Ansia/Disordine",
+    "Emozione secondaria": "Curiosità/Potenziale",
+    "Forma emozione": "Cerchio",
+    "Forma secondaria": "Quadrato"
+  },
+  {
+    "Studente": "S16",
+    "Quadrati": "3",
+    "Cerchi": "9",
+    "Triangoli": "4",
+    "Emozione": "Ansia/Disordine",
+    "Emozione secondaria": "Curiosità/Potenziale",
+    "Forma emozione": "Triangolo",
+    "Forma secondaria": ""
+  },
+  {
+    "Studente": "S17",
+    "Quadrati": "5",
+    "Cerchi": "5",
+    "Triangoli": "4",
+    "Emozione": "Sicurezza/Appartenenza",
+    "Emozione secondaria": "Noia/Apatia",
+    "Forma emozione": "Cerchio",
+    "Forma secondaria": "Quadrato"
+  },
+  {
+    "Studente": "S18",
+    "Quadrati": "2",
+    "Cerchi": "5",
+    "Triangoli": "0",
+    "Emozione": "Sicurezza/Appartenenza",
+    "Emozione secondaria": "Sicurezza/Appartenenza",
+    "Forma emozione": "Cerchio",
+    "Forma secondaria": ""
+  },
+  {
+    "Studente": "S19",
+    "Quadrati": "5",
+    "Cerchi": "10",
+    "Triangoli": "4",
+    "Emozione": "",
+    "Emozione secondaria": "",
+    "Forma emozione": "",
+    "Forma secondaria": ""
+  },
+  {
+    "Studente": "",
+    "Quadrati": "",
+    "Cerchi": "",
+    "Triangoli": "",
+    "Emozione": "",
+    "Emozione secondaria": "",
+    "Forma emozione": "",
+    "Forma secondaria": ""
+  },
+  {
+    "Studente": "TOT",
+    "Quadrati": "59",
+    "Cerchi": "96",
+    "Triangoli": "49",
+    "Emozione": "",
+    "Emozione secondaria": "",
+    "Forma emozione": "",
+    "Forma secondaria": ""
+  }
+]

@@ -1,0 +1,130 @@
+/* ============================================================
+   DASHBOARD LEZIONI
+   ============================================================ */
+
+/* Bubble area placeholder */
+.lezioni-bubble-placeholder {
+  min-height: 280px;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--r-md);
+  background: var(--c-gray-100);
+  display: flex;
+  flex-direction: column;
+}
+
+.lezioni-bubble-legend {
+  display: flex;
+  gap: var(--sp-24);
+  padding: var(--sp-16) var(--sp-24);
+  border-bottom: 1px solid var(--c-gray-200);
+}
+
+.lezioni-bubble-area {
+  flex: 1;
+  position: relative;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s var(--ease-out);
+  cursor: pointer;
+}
+
+.bubble:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+/* Student cards grid */
+.student-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: var(--sp-12);
+  margin-top: var(--sp-24);
+}
+
+.student-card {
+  background: var(--c-gray-100);
+  border-radius: var(--r-md);
+  padding: var(--sp-12);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-8);
+  transition: box-shadow var(--t-fast) var(--ease-out);
+}
+
+.student-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.student-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.student-card__id {
+  font-size: var(--text-micro);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.05em;
+  color: var(--c-gray-600);
+}
+
+.student-card__emotion {
+  font-size: var(--text-micro);
+  font-weight: var(--fw-medium);
+}
+
+.student-card__donut {
+  width: 48px;
+  height: 48px;
+  margin-inline: auto;
+}
+
+.donut-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.student-card__bars {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.student-bar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.student-bar__label {
+  font-size: 9px;
+  font-weight: var(--fw-bold);
+  width: 10px;
+  flex-shrink: 0;
+}
+
+.student-bar__track {
+  flex: 1;
+  height: 4px;
+  background: rgba(0,0,0,0.08);
+  border-radius: var(--r-pill);
+  overflow: hidden;
+}
+
+.student-bar__fill {
+  height: 100%;
+  border-radius: var(--r-pill);
+  transition: width 0.5s var(--ease-out);
+}

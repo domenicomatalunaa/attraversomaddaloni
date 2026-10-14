@@ -1,0 +1,622 @@
+/* --- Font Face: Basic Sans -------------------------------- */
+@font-face {
+  font-family: 'Basic Sans';
+  src: url('/fonts/BasicSans-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Basic Sans';
+  src: url('/fonts/BasicSans-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Basic Sans';
+  src: url('/fonts/BasicSans-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Basic Sans';
+  src: url('/fonts/BasicSans-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- Font Face: Tifata Display --------------------------- */
+@font-face {
+  font-family: 'Tifata Display';
+  src: url('/fonts/TifataDisplay-Hairline.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tifata Display';
+  src: url('/fonts/TifataDisplay-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tifata Display';
+  src: url('/fonts/TifataDisplay-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tifata Display VF';
+  src: url('/fonts/TifataDisplayVF.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tifata';
+  src: url('/fonts/Tifata-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- CSS Variables / Design Tokens ------------------------ */
+:root {
+  /* Colors */
+  --c-blue:     #2020FF;
+  --c-blue-dark:#1515CC;
+  --c-black:    #0D0D0D;
+  --c-dark:     #111111;
+  --c-white:    #FAFAFA;
+  --c-off-white:#F5F5F0;
+  --c-green:    #7BFF4B;
+  --c-orange:   #FF8C00;
+  --c-orange-mid: #FF6B00;
+  --c-gray-100: #F0F0F0;
+  --c-gray-200: #E0E0E0;
+  --c-gray-400: #999999;
+  --c-gray-600: #555555;
+
+  /* Typography */
+  --font-display: 'Tifata Display', 'Tifata Display VF', 'Tifata', sans-serif;
+  --font-body:    'Basic Sans', system-ui, -apple-system, sans-serif;
+
+  /* Type scale — Desktop */
+  --text-h1:    clamp(2.5rem, 5vw, 4.5rem);
+  --text-h2:    clamp(2rem, 3.5vw, 3rem);
+  --text-h3:    clamp(1.5rem, 2.5vw, 2rem);
+  --text-h4:    clamp(1.25rem, 2vw, 1.5rem);
+  --text-lead:  clamp(1.1rem, 1.5vw, 1.25rem);
+  --text-body:  1rem;
+  --text-small: 0.875rem;
+  --text-micro: 0.75rem;
+
+  /* Font weights */
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-bold:    700;
+  --fw-black:   900;
+
+  /* Line heights */
+  --lh-tight:  1.0;
+  --lh-snug:   1.15;
+  --lh-normal: 1.25;
+  --lh-relaxed:1.5;
+
+  /* Spacing scale (8px grid) */
+  --sp-2:   0.125rem;   /*  2px */
+  --sp-4:   0.25rem;    /*  4px */
+  --sp-8:   0.5rem;     /*  8px */
+  --sp-12:  0.75rem;    /* 12px */
+  --sp-16:  1rem;       /* 16px */
+  --sp-20:  1.25rem;    /* 20px */
+  --sp-24:  1.5rem;     /* 24px */
+  --sp-32:  2rem;       /* 32px */
+  --sp-40:  2.5rem;     /* 40px */
+  --sp-48:  3rem;       /* 48px */
+  --sp-64:  4rem;       /* 64px */
+  --sp-80:  5rem;       /* 80px */
+  --sp-96:  6rem;       /* 96px */
+  --sp-120: 7.5rem;     /* 120px */
+  --sp-160: 10rem;      /* 160px */
+
+  /* Border radius */
+  --r-sm:   0.25rem;    /* 4px */
+  --r-md:   0.5rem;     /* 8px */
+  --r-lg:   1rem;       /* 16px */
+  --r-xl:   1.5rem;     /* 24px */
+  --r-pill: 100px;
+
+  /* Layout */
+  --container-max: 1280px;
+  --container-pad: clamp(1.25rem, 4vw, 5rem);
+  --grid-gap:      clamp(1rem, 2vw, 1.5rem);
+  --nav-height:    64px;
+
+  /* Transitions */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --t-fast:      150ms;
+  --t-normal:    400ms;
+  --t-slow:      600ms;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.07), 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* --- Reset ------------------------------------------------ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-relaxed);
+  color: var(--c-black);
+  background: var(--c-white);
+  overflow-x: hidden;
+}
+
+img, video, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* --- Scroll To Top Button --------------------------------- */
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 900;
+  background: rgba(13, 13, 13, 0.85);
+  color: #FAFAFA;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 100px;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: fadeInUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.scroll-to-top-btn:hover {
+  background: var(--c-blue) !important;
+  border-color: var(--c-blue) !important;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .scroll-to-top-btn {
+    bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px));
+    right: 1.25rem;
+    padding: 0.45rem 0.85rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* --- Layout Utilities ------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+.section {
+  padding-block: var(--sp-96);
+}
+
+.section--sm {
+  padding-block: var(--sp-64);
+}
+
+.section--lg {
+  padding-block: var(--sp-160);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--grid-gap);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--grid-gap);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--grid-gap);
+}
+
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-8 { gap: var(--sp-8); }
+.gap-16 { gap: var(--sp-16); }
+.gap-24 { gap: var(--sp-24); }
+.gap-32 { gap: var(--sp-32); }
+
+/* --- Typography ------------------------------------------ */
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* h1 = Tifata Display ALL CAPS BLACK */
+h1, .h1, .view-header__title, .hero__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: 900;
+  line-height: var(--lh-snug);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+h2, .h2 {
+  font-family: var(--font-body);
+  font-size: var(--text-h2);
+  font-weight: var(--fw-black);
+  line-height: var(--lh-snug);
+  letter-spacing: -0.025em;
+}
+
+h3, .h3 {
+  font-family: var(--font-body);
+  font-size: var(--text-h3);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-normal);
+  letter-spacing: -0.015em;
+}
+
+h4, .h4 {
+  font-family: var(--font-body);
+  font-size: var(--text-h4);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-normal);
+  letter-spacing: -0.01em;
+}
+
+/* Classe Tifata — solo per titoli Display hero di pagina */
+.display {
+  font-family: var(--font-display) !important;
+  letter-spacing: -0.03em;
+}
+
+.text-lead {
+  font-size: var(--text-lead);
+  line-height: var(--lh-relaxed);
+  color: var(--c-gray-600);
+}
+
+.text-small {
+  font-size: var(--text-small);
+}
+
+.text-micro {
+  font-size: var(--text-micro);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.text-blue  { 
+  color: var(--c-blue); 
+  font-family: var(--font-body) !important;
+}
+.text-white { color: var(--c-white); }
+.text-gray  { color: var(--c-gray-600); }
+
+/* --- Buttons ---------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-8);
+  padding: 0.5rem 1rem;
+  border-radius: var(--r-pill);
+  font-size: var(--text-small);
+  font-weight: var(--fw-medium);
+  font-family: var(--font-body);
+  letter-spacing: 0.01em;
+  border: 1.5px solid var(--c-gray-200);
+  background: var(--c-white);
+  color: var(--c-black);
+  transition: all var(--t-normal) var(--ease-out);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn--primary {
+  background: var(--c-blue);
+  color: var(--c-white);
+  border: 1.5px solid var(--c-blue);
+}
+
+.btn--primary:hover {
+  background: #0000CC;
+  border-color: #0000CC;
+  color: var(--c-white);
+  box-shadow: 0 4px 16px rgba(32, 32, 255, 0.3);
+}
+
+.btn--outline {
+  background: var(--c-white);
+  color: var(--c-black);
+  border: 1.5px solid var(--c-gray-200);
+}
+
+.btn--outline:hover {
+  background: var(--c-blue);
+  color: var(--c-white);
+  border-color: var(--c-blue);
+  box-shadow: 0 4px 16px rgba(32, 32, 255, 0.25);
+}
+
+.btn--outline-white {
+  background: transparent;
+  color: var(--c-white);
+  border: 1.5px solid var(--c-white);
+}
+
+.btn--outline-white:hover {
+  background: var(--c-white);
+  color: var(--c-black);
+}
+
+/* Ghost: solo il testo scurisce, nessun background o bordo */
+.btn--ghost {
+  background: transparent;
+  color: var(--c-blue);
+  border: none;
+  padding-inline: 0;
+  gap: var(--sp-4);
+  box-shadow: none;
+}
+
+.btn--ghost:hover {
+  background: transparent !important;
+  color: #0000BB !important;
+  border: none !important;
+  box-shadow: none !important;
+  gap: var(--sp-12);
+  transform: none;
+}
+
+/* --- Badge / Tag ------------------------------------------ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--r-sm);
+  font-size: var(--text-micro);
+  font-weight: var(--fw-medium);
+  background: var(--c-gray-100);
+  color: var(--c-gray-600);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.badge--blue {
+  background: var(--c-blue);
+  color: var(--c-white);
+}
+
+.badge--green {
+  background: var(--c-green);
+  color: var(--c-black);
+}
+
+/* --- Image Placeholder ------------------------------------ */
+.img-placeholder {
+  background: var(--c-gray-200);
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.img-placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(0,0,0,0.03) 10px,
+      rgba(0,0,0,0.03) 11px
+    );
+}
+
+/* --- Section Label ---------------------------------------- */
+.section-label {
+  font-size: var(--text-micro);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-blue);
+  margin-bottom: var(--sp-16);
+}
+
+.section-label--dark {
+  color: var(--c-black);
+}
+
+/* --- Divider ---------------------------------------------- */
+.divider {
+  height: 1px;
+  background: var(--c-gray-200);
+  margin-block: var(--sp-32);
+}
+
+/* --- Animated Link ---------------------------------------- */
+.link-animated {
+  position: relative;
+  color: var(--c-blue);
+  font-weight: var(--fw-medium);
+}
+
+.link-animated::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--c-blue);
+  transition: width var(--t-normal) var(--ease-out);
+}
+
+.link-animated:hover::after {
+  width: 100%;
+}
+
+/* --- Phase Tag -------------------------------------------- */
+.phase-tag {
+  font-size: var(--text-micro);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-blue);
+  margin-bottom: var(--sp-8);
+}
+
+/* --- Grain SVG Filter ------------------------------------- */
+.grain-filter {
+  display: none;
+}
+
+/* --- Grain Overlay --------------------------------------- */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  mix-blend-mode: multiply;
+}
+
+/* --- Page Transitions ------------------------------------- */
+.page-enter {
+  animation: fadeUp 0.5s var(--ease-out) both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Geometric Decoration --------------------------------- */
+.geo-accent {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 45%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+/* --- Responsive ------------------------------------------ */
+@media (max-width: 1024px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-inline: 1.25rem;
+  }
+
+  .section {
+    padding-block: var(--sp-64);
+  }
+
+  .section--lg {
+    padding-block: var(--sp-96);
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}

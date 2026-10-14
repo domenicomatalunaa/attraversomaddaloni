@@ -1,0 +1,392 @@
+/* ============================================================
+   DASHBOARD SONDAGGIO & CONDIVISI
+   ============================================================ */
+
+/* ── Filter Bar ──────────────────────────────────────────── */
+.dashboard-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-16);
+  align-items: center;
+  padding: var(--sp-16) var(--sp-24);
+  background: var(--c-gray-100);
+  border-radius: var(--r-md);
+  margin-bottom: var(--sp-64);
+}
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-12);
+}
+
+.filter-bar__label {
+  font-size: var(--text-micro);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.08em;
+  color: var(--c-gray-400);
+}
+
+.filter-bar__pills {
+  display: flex;
+  gap: var(--sp-8);
+  flex-wrap: wrap;
+}
+
+.filter-pill {
+  padding: 0.25rem 0.875rem;
+  border-radius: var(--r-pill);
+  font-size: var(--text-small);
+  font-weight: var(--fw-medium);
+  font-family: var(--font-body);
+  border: 1.5px solid var(--c-gray-200);
+  background: var(--c-white);
+  color: var(--c-black);
+  cursor: pointer;
+  transition: all var(--t-fast) var(--ease-out);
+}
+
+.filter-pill:hover {
+  border-color: var(--c-black);
+}
+
+.filter-pill--active {
+  background: var(--c-black);
+  color: var(--c-white);
+  border-color: var(--c-black);
+}
+
+/* ── Dashboard Section ───────────────────────────────────── */
+.dashboard-section {
+  padding-block: var(--sp-64);
+  border-bottom: 1px solid var(--c-gray-200);
+}
+
+.dashboard-section__num {
+  font-size: var(--text-micro);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-gray-400);
+  margin-bottom: var(--sp-16);
+}
+
+.dashboard-section__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: var(--fw-black);
+  line-height: var(--lh-snug);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--sp-40);
+}
+
+/* ── Chart Box ───────────────────────────────────────────── */
+.chart-box {
+  background: var(--c-white);
+  border: 1px solid var(--c-gray-200);
+  border-radius: var(--r-lg);
+  padding: var(--sp-32);
+}
+
+.chart-box__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--sp-16);
+  margin-bottom: var(--sp-32);
+  padding-bottom: var(--sp-16);
+  border-bottom: 1px solid var(--c-gray-100);
+}
+
+.chart-box__label {
+  font-size: var(--text-small);
+  font-weight: var(--fw-medium);
+  color: var(--c-gray-600);
+}
+
+.chart-box__legend {
+  display: flex;
+  gap: var(--sp-16);
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-8);
+  font-size: var(--text-small);
+  color: var(--c-gray-600);
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.chart-box__pcts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-16);
+  margin-top: var(--sp-24);
+  padding-top: var(--sp-16);
+  border-top: 1px solid var(--c-gray-100);
+}
+
+.chart-pct {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.chart-pct__name {
+  font-size: var(--text-micro);
+  color: var(--c-gray-400);
+}
+
+.chart-pct__val {
+  font-size: 1.25rem;
+  font-weight: var(--fw-bold);
+  color: var(--c-black);
+}
+
+/* ── Osgood Differenziale Semantico ──────────────────────── */
+.osgood-legend {
+  display: flex;
+  gap: var(--sp-24);
+  margin-bottom: var(--sp-24);
+}
+
+.osgood-legend__item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-8);
+  font-size: var(--text-small);
+}
+
+.osgood-legend__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.osgood-legend__dot--oggi   { background: var(--c-blue); }
+.osgood-legend__dot--domani { background: var(--c-green); }
+
+.osgood-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-16);
+}
+
+.osgood-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 120px;
+  align-items: center;
+  gap: var(--sp-16);
+}
+
+.osgood-row__label {
+  font-size: var(--text-small);
+  color: var(--c-gray-600);
+}
+
+.osgood-row__label--left  { text-align: right; }
+.osgood-row__label--right { text-align: left; }
+
+.osgood-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-12);
+}
+
+.osgood-bar__track {
+  flex: 1;
+  height: 8px;
+  background: var(--c-gray-100);
+  border-radius: var(--r-pill);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.osgood-bar__fill {
+  position: absolute;
+  height: 100%;
+  border-radius: var(--r-pill);
+  transition: width 0.6s var(--ease-out);
+}
+
+.osgood-bar__fill--left {
+  right: 50%;
+  background: var(--c-blue);
+}
+
+.osgood-bar__fill--right {
+  left: 50%;
+  background: var(--c-green);
+}
+
+.osgood-bar__center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 16px;
+  background: var(--c-gray-400);
+  border-radius: var(--r-pill);
+}
+
+.osgood-bar__value {
+  font-size: var(--text-micro);
+  font-weight: var(--fw-medium);
+  color: var(--c-green);
+  min-width: 32px;
+}
+
+.osgood-bar__value--neg {
+  color: var(--c-blue);
+}
+
+/* ── Word Cloud ──────────────────────────────────────────── */
+.word-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-16) var(--sp-24);
+  padding-block: var(--sp-24);
+  line-height: 1.2;
+}
+
+.word-cloud__word {
+  cursor: default;
+  transition: opacity 0.4s ease, transform 0.4s ease, font-size 0.4s ease;
+  animation: wordFadeIn 0.5s ease both;
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+@keyframes wordFadeIn {
+  from { opacity: 0; transform: scale(0.8) translateY(6px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.word-cloud__word:hover {
+  opacity: 0.7;
+  transform: scale(1.05);
+}
+
+/* ── Sondaggio Stats Bar ─────────────────────────────────── */
+.sondaggio-stats {
+  border-bottom: 1px solid var(--c-gray-200);
+}
+
+.sondaggio-stats__bar {
+  background: var(--c-blue);
+  border-radius: var(--r-md);
+  padding: var(--sp-24) var(--sp-32);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-32);
+}
+
+.sondaggio-stat__title {
+  font-size: var(--text-micro);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: var(--sp-8);
+}
+
+/* ── Sondaggio CTA ───────────────────────────────────────── */
+.sondaggio-cta {
+  padding-block: var(--sp-64);
+  border-bottom: 1px solid var(--c-gray-200);
+}
+
+.sondaggio-cta__box {
+  background: var(--c-gray-100);
+  border-radius: var(--r-xl);
+  padding: var(--sp-48);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-20);
+  max-width: 640px;
+  margin-inline: auto;
+  text-align: center;
+  align-items: center;
+}
+
+.sondaggio-cta__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--fw-black);
+  letter-spacing: -0.02em;
+}
+
+.sondaggio-cta__desc {
+  font-size: var(--text-small);
+  color: var(--c-gray-600);
+  line-height: var(--lh-relaxed);
+  max-width: 480px;
+}
+
+.sondaggio-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-16);
+  max-width: 720px;
+}
+
+.sondaggio-body p {
+  font-size: var(--text-lead);
+  color: var(--c-gray-600);
+  line-height: var(--lh-relaxed);
+}
+
+/* ── Conclusion ──────────────────────────────────────────── */
+.dashboard-conclusion {
+  border-bottom: none;
+}
+
+.dashboard-conclusion__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-20);
+  max-width: 720px;
+  margin-top: var(--sp-24);
+}
+
+.dashboard-conclusion__body p {
+  font-size: 1rem;
+  color: var(--c-gray-600);
+  line-height: var(--lh-relaxed);
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .sondaggio-stats__bar {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-box__pcts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .osgood-row {
+    grid-template-columns: 80px 1fr 80px;
+    gap: var(--sp-8);
+  }
+
+  .osgood-row__label {
+    font-size: var(--text-micro);
+  }
+
+  .dashboard-section__title {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,103 @@
+/* ============================================================
+   STRUMENTI PAGE
+   ============================================================ */
+.strumenti__hero {
+  background: var(--c-white);
+  padding-top: var(--sp-80);
+  padding-bottom: var(--sp-64);
+  text-align: center;
+  border-bottom: 1px solid var(--c-gray-200);
+}
+
+.strumenti__title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: var(--fw-black);
+  color: var(--c-black);
+  letter-spacing: -0.03em;
+  line-height: var(--lh-snug);
+}
+
+/* Main block */
+.strumenti__block {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--sp-80);
+  align-items: start;
+  margin-bottom: var(--sp-80);
+  padding-bottom: var(--sp-80);
+  border-bottom: 1px solid var(--c-gray-200);
+}
+
+.strumenti__block-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-16);
+}
+
+.strumenti__block-title {
+  font-size: 1.5rem;
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-normal);
+  letter-spacing: -0.015em;
+  margin-bottom: var(--sp-8);
+}
+
+.strumenti__block-text p {
+  font-size: var(--text-small);
+  color: var(--c-gray-600);
+  line-height: var(--lh-relaxed);
+}
+
+.strumenti__block-imgs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-16);
+}
+
+/* Claim */
+.strumenti__claim {
+  margin-bottom: var(--sp-64);
+}
+
+.strumenti__claim p {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-normal);
+  letter-spacing: -0.015em;
+  max-width: 680px;
+}
+
+/* How */
+.strumenti__how {
+  margin-bottom: var(--sp-64);
+  padding-left: var(--sp-32);
+  border-left: 3px solid var(--c-blue);
+}
+
+.strumenti__how p {
+  font-size: var(--text-small);
+  color: var(--c-gray-600);
+  line-height: var(--lh-relaxed);
+  max-width: 640px;
+}
+
+/* CTA */
+.strumenti__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-12);
+}
+
+.strumenti__cta-note {
+  font-size: var(--text-micro);
+  color: var(--c-gray-400);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .strumenti__block {
+    grid-template-columns: 1fr;
+    gap: var(--sp-40);
+  }
+}

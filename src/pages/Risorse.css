@@ -1,0 +1,91 @@
+/* ============================================================
+   RISORSE PAGE
+   ============================================================ */
+.risorse__hero {
+  background: var(--c-white);
+  padding-top: var(--sp-80);
+  padding-bottom: var(--sp-64);
+  border-bottom: 1px solid var(--c-gray-200);
+  text-align: center;
+}
+
+.risorse__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: var(--fw-black);
+  letter-spacing: -0.03em;
+  margin-bottom: var(--sp-24);
+}
+
+.risorse__lead {
+  font-size: var(--text-lead);
+  color: var(--c-gray-600);
+  line-height: var(--lh-relaxed);
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+/* ── Risorse grid ─────────────────────────────────────────── */
+.risorse__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-24);
+  margin-bottom: var(--sp-64);
+}
+
+/* ── Card Risorsa ─────────────────────────────────────────── */
+.risorsa-card {
+  background: var(--c-white);
+  border: 1px solid var(--c-gray-200);
+  border-radius: var(--r-xl);
+  padding: var(--sp-40);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-12);
+  min-height: 220px;
+  will-change: transform;
+  transition:
+    box-shadow var(--t-normal) var(--ease-out),
+    transform var(--t-normal) var(--ease-out);
+}
+
+.risorsa-card:hover {
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.10);
+  transform: translateY(-5px);
+}
+
+.risorsa-card__title {
+  font-family: var(--font-body);
+  font-weight: var(--fw-black);
+  font-size: 1.375rem;
+  line-height: var(--lh-snug);
+  letter-spacing: -0.02em;
+}
+
+.risorsa-card__desc {
+  font-family: var(--font-body);
+  font-weight: var(--fw-regular);
+  font-size: var(--text-small);
+  color: var(--c-gray-600);
+  line-height: var(--lh-relaxed);
+}
+
+/* ── Legal note ───────────────────────────────────────────── */
+.risorse__legal {
+  padding-top: var(--sp-40);
+  border-top: 1px solid var(--c-gray-200);
+}
+
+.risorse__legal p {
+  font-size: var(--text-small);
+  color: var(--c-gray-400);
+  line-height: var(--lh-relaxed);
+  max-width: 720px;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .risorse__grid {
+    grid-template-columns: 1fr;
+  }
+}

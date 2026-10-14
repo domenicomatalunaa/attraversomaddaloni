@@ -1,0 +1,21 @@
+# Robots.txt for Attraverso Maddaloni
+User-agent: *
+Allow: /
+
+# Allow AI & Search Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://attraversomaddaloni.it/sitemap.xml
