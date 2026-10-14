@@ -55,14 +55,19 @@ export default function LivingInkHeroBackground({
 
     const resize = () => {
       dpr = Math.min(window.devicePixelRatio || 1, 2)
-      width = canvas.parentElement ? canvas.parentElement.clientWidth : window.innerWidth
-      height = canvas.parentElement ? canvas.parentElement.clientHeight : window.innerHeight
+      const rect = canvas.parentElement ? canvas.parentElement.getBoundingClientRect() : null
+      width = rect && rect.width > 0 ? rect.width : window.innerWidth
+      height = rect && rect.height > 0 ? rect.height : window.innerHeight
       canvas.width = Math.floor(width * dpr)
       canvas.height = Math.floor(height * dpr)
     }
 
     resize()
     window.addEventListener('resize', resize)
+    window.addEventListener('orientationchange', resize)
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', resize)
+    }
 
     // Offscreen mask per rasterizzare il testo macro "MADDALONI"
     const maskCanvas = document.createElement('canvas')
@@ -209,6 +214,10 @@ export default function LivingInkHeroBackground({
     return () => {
       cancelAnimationFrame(animationFrameId)
       window.removeEventListener('resize', resize)
+      window.removeEventListener('orientationchange', resize)
+      if (window.visualViewport) {
+        window.visualViewport.removeEventListener('resize', resize)
+      }
       if (interactive) {
         window.removeEventListener('pointermove', handlePointerMove)
         window.removeEventListener('pointerleave', handlePointerLeave)

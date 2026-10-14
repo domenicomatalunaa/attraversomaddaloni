@@ -1,25 +1,36 @@
+/* Fix per viewport mobile e overscroll bounce */
+html, body {
+  background-color: #05053E;
+  min-height: 100%;
+  min-height: 100dvh;
+}
+
 .waiting-page {
   position: relative;
   min-height: 100vh;
+  min-height: 100dvh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 2.5rem 1.5rem;
-  /* Blu ancora più profondo e scuro (notte/zaffiro scuro) per massimo contrasto ed eleganza */
+  padding: max(2rem, env(safe-area-inset-top, 2rem)) max(1.5rem, env(safe-area-inset-right, 1.5rem)) max(2rem, env(safe-area-inset-bottom, 2rem)) max(1.5rem, env(safe-area-inset-left, 1.5rem));
+  /* Blu ancora più profondo e scuro (notte/zaffiro scuro) */
   background: radial-gradient(ellipse at 50% 40%, #0A0A7A 0%, #040438 100%);
   background-color: #05053E;
   color: #ffffff;
-  overflow: hidden;
+  overflow-x: hidden;
   box-sizing: border-box;
   font-family: var(--font-body, 'Basic Sans', sans-serif);
 }
 
-/* Texture canvas in the background */
+/* Texture canvas in the background - fixed a tutto schermo per mobile */
 .waiting-page__canvas-wrapper {
-  position: absolute;
+  position: fixed;
   inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
   pointer-events: none;
   z-index: 1;
   opacity: 0.85;
@@ -171,20 +182,65 @@
   opacity: 0.75;
 }
 
+/* Ottimizzazione Mobile Fullscreen */
 @media (max-width: 768px) {
   .waiting-page {
-    padding: 1.5rem 1rem;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: max(1.25rem, env(safe-area-inset-top, 1.25rem)) max(1rem, env(safe-area-inset-right, 1rem)) max(1.25rem, env(safe-area-inset-bottom, 1.25rem)) max(1rem, env(safe-area-inset-left, 1rem));
+    justify-content: space-between;
   }
+
   .waiting-page__header {
     justify-content: center;
   }
-  .waiting-page__content {
-    padding: 2rem 0.5rem;
+
+  .waiting-page__logo {
+    height: 38px;
   }
+
+  .waiting-page__content {
+    padding: 1.25rem 0.5rem;
+    margin: auto 0;
+  }
+
+  .waiting-page__title {
+    font-size: clamp(2rem, 9.2vw, 3.2rem);
+    margin: 0 0 1rem 0;
+  }
+
+  .waiting-page__tagline {
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    margin-bottom: 0.65rem;
+  }
+
+  .waiting-page__bodytext {
+    gap: 0.75rem;
+  }
+
+  .waiting-page__lead {
+    font-size: clamp(1.05rem, 3.8vw, 1.22rem);
+    line-height: 1.32;
+  }
+
+  .waiting-page__desc {
+    font-size: clamp(0.85rem, 3.2vw, 0.96rem);
+    line-height: 1.5;
+    max-width: 96%;
+  }
+
+  .waiting-page__closing {
+    font-size: clamp(0.75rem, 2.8vw, 0.85rem);
+    margin-top: 0.25rem;
+  }
+
   .waiting-page__footer {
+    padding-top: 0.85rem;
+    gap: 0.4rem;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 1rem;
+    font-size: 0.72rem;
   }
 }
