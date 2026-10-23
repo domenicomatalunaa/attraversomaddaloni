@@ -1,4 +1,26 @@
 {
+  "redirects": [
+    {
+      "source": "/tesi/adobe",
+      "destination": "https://indd.adobe.com/view/a9aeed22-54b1-4728-91c3-a0c4f62f18d5",
+      "permanent": false
+    },
+    {
+      "source": "/ricerca/adobe",
+      "destination": "https://indd.adobe.com/view/a9aeed22-54b1-4728-91c3-a0c4f62f18d5",
+      "permanent": false
+    },
+    {
+      "source": "/brandmanual/adobe",
+      "destination": "https://indd.adobe.com/view/37d1496a-a59a-4c81-89ce-4b42e5394059",
+      "permanent": false
+    },
+    {
+      "source": "/manuale/adobe",
+      "destination": "https://indd.adobe.com/view/37d1496a-a59a-4c81-89ce-4b42e5394059",
+      "permanent": false
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

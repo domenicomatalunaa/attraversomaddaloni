@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink, Link, useLocation } from 'react-router-dom'
 import './Header.css'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
+  const location = useLocation()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -26,6 +27,12 @@ export default function Header() {
               className={({ isActive }) => `header__link ${isActive ? 'header__link--active' : ''}`}
             >
               Progetto
+            </NavLink>
+            <NavLink
+              to="/tesi"
+              className={({ isActive }) => `header__link ${isActive || location?.pathname === '/brandmanual' ? 'header__link--active' : ''}`}
+            >
+              Volumi Tesi
             </NavLink>
             <NavLink
               to="/risorse"
@@ -57,6 +64,12 @@ export default function Header() {
           className={({ isActive }) => `mobile-pill-link ${isActive ? 'mobile-pill-link--active' : ''}`}
         >
           <span>Progetto</span>
+        </NavLink>
+        <NavLink
+          to="/tesi"
+          className={({ isActive }) => `mobile-pill-link ${isActive || location?.pathname === '/brandmanual' ? 'mobile-pill-link--active' : ''}`}
+        >
+          <span>Tesi</span>
         </NavLink>
         <NavLink
           to="/risorse"
