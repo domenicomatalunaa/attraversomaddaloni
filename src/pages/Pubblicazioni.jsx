@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { VOLUMI_DATA } from '../data/volumiData'
-import NativeFlipbook from '../components/flipbook/NativeFlipbook'
+import PdfViewer from '../components/flipbook/PdfViewer'
 import SEO from '../components/common/SEO'
 import './Pubblicazioni.css'
 
@@ -171,7 +171,7 @@ export default function Pubblicazioni({ initialVolume = '1' }) {
           </button>
         )}
 
-        <NativeFlipbook key={activeVolume.id} volume={activeVolume} />
+        <PdfViewer key={activeVolume.id} volume={activeVolume} />
       </div>
 
       {/* ── Bottom Bar / Metadati Singola Riga ──────────────── */}

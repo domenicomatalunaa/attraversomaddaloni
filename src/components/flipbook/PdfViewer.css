@@ -1,0 +1,287 @@
+.pdf-viewer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, #181922 0%, #0a0b0e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Loading Overlay */
+.pdf-viewer__loader {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: rgba(10, 11, 14, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 50;
+  color: #f3f4f6;
+  font-family: inherit;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.pdf-viewer__spinner {
+  width: 38px;
+  height: 38px;
+  border: 3px solid rgba(255, 255, 255, 0.12);
+  border-top-color: #d12229;
+  border-radius: 50%;
+  animation: pdf-spin 0.8s linear infinite;
+}
+
+@keyframes pdf-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Freccia di Navigazione Laterale Fluttuante */
+.pdf-viewer__nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(24, 25, 34, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.pdf-viewer__nav-btn--prev {
+  left: 20px;
+  padding-right: 2px;
+}
+
+.pdf-viewer__nav-btn--next {
+  right: 20px;
+  padding-left: 2px;
+}
+
+.pdf-viewer__nav-btn:hover:not(:disabled) {
+  background: rgba(209, 34, 41, 0.9);
+  border-color: rgba(209, 34, 41, 1);
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 6px 20px rgba(209, 34, 41, 0.35);
+}
+
+.pdf-viewer__nav-btn:disabled {
+  opacity: 0.15;
+  cursor: not-allowed;
+  transform: translateY(-50%);
+}
+
+/* Stage & Spreads */
+.pdf-viewer__stage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 72px 76px 72px; /* lascia spazio per controlli e frecce */
+  box-sizing: border-box;
+}
+
+.pdf-viewer__spread {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  border-radius: 3px;
+  background: #ffffff;
+  transition: transform 0.2s ease-out;
+}
+
+.pdf-viewer__spread--double {
+  /* Ombra centrale libro / piegatura dorso */
+}
+
+.pdf-viewer__spread--double::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 24px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.14) 0%,
+    rgba(0, 0, 0, 0.04) 40%,
+    rgba(0, 0, 0, 0.04) 60%,
+    rgba(0, 0, 0, 0.14) 100%
+  );
+  pointer-events: none;
+  z-index: 5;
+}
+
+.pdf-viewer__page-wrap {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+  background: #fff;
+}
+
+.pdf-viewer__canvas {
+  display: block;
+  background-color: #ffffff;
+}
+
+/* Layer trasparente di sicurezza anti salvataggio/drag */
+.pdf-viewer__shield {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: auto;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Floating Bottom Control Bar */
+.pdf-viewer__controls {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(20, 21, 28, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 7px 16px;
+  border-radius: 9999px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  z-index: 30;
+  color: #f3f4f6;
+  font-size: 0.85rem;
+  max-width: 92vw;
+}
+
+.pdf-viewer__ctrl-btn {
+  background: transparent;
+  border: none;
+  color: #e5e7eb;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.pdf-viewer__ctrl-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.pdf-viewer__ctrl-btn:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+.pdf-viewer__slider {
+  width: 120px;
+  accent-color: #d12229;
+  cursor: pointer;
+}
+
+.pdf-viewer__counter {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.82rem;
+  color: #d1d5db;
+  white-space: nowrap;
+  padding: 0 4px;
+}
+
+.pdf-viewer__counter strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.pdf-viewer__ctrl-sep {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.9rem;
+  margin: 0 2px;
+}
+
+.pdf-viewer__zoom-pct {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  min-width: 38px;
+  text-align: center;
+}
+
+.pdf-viewer__ctrl-btn-reset {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #f3f4f6;
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.pdf-viewer__ctrl-btn-reset:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* Responsività Mobile */
+@media (max-width: 768px) {
+  .pdf-viewer__nav-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.4rem;
+  }
+  .pdf-viewer__nav-btn--prev {
+    left: 8px;
+  }
+  .pdf-viewer__nav-btn--next {
+    right: 8px;
+  }
+  .pdf-viewer__stage {
+    padding: 12px 36px 64px 36px;
+  }
+  .pdf-viewer__controls {
+    bottom: 10px;
+    padding: 5px 12px;
+    gap: 6px;
+  }
+  .pdf-viewer__slider {
+    width: 70px;
+  }
+  .pdf-viewer__zoom-pct,
+  .pdf-viewer__ctrl-sep,
+  .pdf-viewer__ctrl-btn-reset {
+    display: none;
+  }
+}
