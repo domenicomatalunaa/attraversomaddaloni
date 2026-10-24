@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { VOLUMI_DATA } from '../data/volumiData'
+import NativeFlipbook from '../components/flipbook/NativeFlipbook'
 import SEO from '../components/common/SEO'
 import './Pubblicazioni.css'
 
@@ -75,8 +76,14 @@ export default function Pubblicazioni({ initialVolume = '1' }) {
     }
   }
 
+  // Prevenzione download / salvataggio con tasto destro a livello di pagina
+  const handleContextMenu = (e) => {
+    e.preventDefault()
+    return false
+  }
+
   return (
-    <div className="pubblicazioni">
+    <div className="pubblicazioni" onContextMenu={handleContextMenu}>
       <SEO
         title={`${activeVolume.number}: ${activeVolume.title} — Attraverso Maddaloni`}
         description={activeVolume.description}
@@ -149,7 +156,7 @@ export default function Pubblicazioni({ initialVolume = '1' }) {
         </div>
       </header>
 
-      {/* ── Main Embed Viewer ───────────────────────────────── */}
+      {/* ── Main Native Flipbook Viewer ─────────────────────── */}
       <div
         ref={viewerRef}
         className={`pubblicazioni__viewer-wrap ${isFullscreen ? 'pubblicazioni__viewer-wrap--fullscreen' : ''}`}
@@ -164,16 +171,7 @@ export default function Pubblicazioni({ initialVolume = '1' }) {
           </button>
         )}
 
-        <div className="pubblicazioni__iframe-container">
-          <iframe
-            key={activeVolume.embedUrl}
-            src={activeVolume.embedUrl}
-            title={`${activeVolume.number}: ${activeVolume.title}`}
-            allowFullScreen
-            allow="fullscreen"
-            className="pubblicazioni__iframe"
-          />
-        </div>
+        <NativeFlipbook key={activeVolume.id} volume={activeVolume} />
       </div>
 
       {/* ── Bottom Bar / Metadati Singola Riga ──────────────── */}
