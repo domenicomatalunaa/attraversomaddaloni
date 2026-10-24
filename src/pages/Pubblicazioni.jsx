@@ -146,16 +146,6 @@ export default function Pubblicazioni({ initialVolume = '1' }) {
             <span>{isFullscreen ? '⤦' : '⛶'}</span>
             <span>{isFullscreen ? 'Esci' : 'Schermo intero'}</span>
           </button>
-
-          <a
-            href={activeVolume.viewUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="pubblicazioni__btn pubblicazioni__btn--primary"
-            title="Apri nel visualizzatore ufficiale Adobe Publish Online"
-          >
-            <span>Apri su Adobe ↗</span>
-          </a>
         </div>
       </header>
 
@@ -186,31 +176,25 @@ export default function Pubblicazioni({ initialVolume = '1' }) {
         </div>
       </div>
 
-      {/* ── Info Bar / Metadati Volume ──────────────────────── */}
+      {/* ── Bottom Bar / Metadati Singola Riga ──────────────── */}
       <footer className="pubblicazioni__meta">
         <div className="pubblicazioni__meta-inner">
           <div className="pubblicazioni__meta-left">
-            <span className="pubblicazioni__meta-badge">
-              {activeVolume.tag} · FORMATO {activeVolume.format}
-            </span>
-            <div className="pubblicazioni__meta-title-group">
-              <h2 className="pubblicazioni__meta-title">
-                {activeVolume.number} — {activeVolume.title}
-              </h2>
-              <p className="pubblicazioni__meta-desc">
-                {activeVolume.description}
-              </p>
-            </div>
+            <h2 className="pubblicazioni__meta-title">
+              {activeVolume.number} — {activeVolume.title} ({activeVolume.format})
+            </h2>
           </div>
 
           <div className="pubblicazioni__meta-right">
-            <span>Autore: <strong className="pubblicazioni__meta-author">Domenico Mataluna</strong></span>
-            <span>Tesi Triennale in Design della Comunicazione</span>
+            <span>Domenico Mataluna</span>
+            <span className="pubblicazioni__meta-sep">·</span>
+            <span>Tesi di Laurea in Design della Comunicazione</span>
+            <span className="pubblicazioni__meta-sep">·</span>
             <a
               href={activeVolume.viewUrl}
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: '#8fa0ff', textDecoration: 'underline' }}
+              className="pubblicazioni__adobe-link"
             >
               Link originale Adobe ↗
             </a>

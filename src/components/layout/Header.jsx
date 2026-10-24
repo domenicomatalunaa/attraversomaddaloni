@@ -29,12 +29,6 @@ export default function Header() {
               Progetto
             </NavLink>
             <NavLink
-              to="/tesi"
-              className={({ isActive }) => `header__link ${isActive || location?.pathname === '/brandmanual' ? 'header__link--active' : ''}`}
-            >
-              Volumi Tesi
-            </NavLink>
-            <NavLink
               to="/risorse"
               className={({ isActive }) => `header__link ${isActive ? 'header__link--active' : ''}`}
             >
@@ -64,12 +58,6 @@ export default function Header() {
           className={({ isActive }) => `mobile-pill-link ${isActive ? 'mobile-pill-link--active' : ''}`}
         >
           <span>Progetto</span>
-        </NavLink>
-        <NavLink
-          to="/tesi"
-          className={({ isActive }) => `mobile-pill-link ${isActive || location?.pathname === '/brandmanual' ? 'mobile-pill-link--active' : ''}`}
-        >
-          <span>Tesi</span>
         </NavLink>
         <NavLink
           to="/risorse"

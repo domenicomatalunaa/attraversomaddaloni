@@ -27,40 +27,6 @@ export default function Risorse() {
       </section>
 
       <div className="container section">
-        {/* Banner Pubblicazioni Tesi */}
-        <div style={{
-          background: 'var(--c-blue, #2020FF)',
-          color: '#ffffff',
-          borderRadius: 'var(--r-lg)',
-          padding: 'clamp(2rem, 4vw, 3rem)',
-          marginBottom: '3rem',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '2rem'
-        }}>
-          <div style={{ maxWidth: '640px' }}>
-            <span className="badge" style={{ background: 'rgba(255,255,255,0.2)', color: '#ffffff', marginBottom: '0.75rem' }}>
-              PUBBLICAZIONI UFFICIALI
-            </span>
-            <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', fontWeight: 900, fontFamily: 'var(--font-display)', margin: '0.5rem 0 0.75rem 0', textTransform: 'uppercase' }}>
-              I due volumi completi della tesi
-            </h2>
-            <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.9)', lineHeight: 1.6, margin: 0 }}>
-              Sfoglia online il Volume 1 (la ricerca teorica e metodologica, 17×24 cm) e il Volume 2 (il Brand Manual operativo con tutte le linee guida del sistema d'identità, 24×24 cm).
-            </p>
-          </div>
-          <div style={{ display: 'flex', gap: '0.85rem', flexWrap: 'wrap' }}>
-            <Link to="/tesi" className="btn" style={{ background: '#ffffff', color: 'var(--c-blue, #2020FF)', fontWeight: 700 }}>
-              📖 Sfoglia Volume 1 (Tesi)
-            </Link>
-            <Link to="/brandmanual" className="btn" style={{ background: 'rgba(255,255,255,0.15)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.4)', fontWeight: 700 }}>
-              📕 Sfoglia Volume 2 (Brand Manual)
-            </Link>
-          </div>
-        </div>
-
         <div className="risorse__grid">
           <CardRisorsa
             tag="BRAND KIT"

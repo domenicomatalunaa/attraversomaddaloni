@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import LivingInkHeroBackground from '../components/generative/LivingInkHeroBackground'
 import { SITE_CONFIG } from '../config'
 import './WaitingPage.css'
@@ -48,29 +47,6 @@ export default function WaitingPage() {
           <p className="waiting-page__closing">
             Stiamo preparando il viaggio. A presto.
           </p>
-        </div>
-
-        {/* Callout Volumi Tesi Sfogliabili */}
-        <div className="waiting-page__publications">
-          <span className="waiting-page__pub-label">Sfoglia i due volumi completi della tesi:</span>
-          <div className="waiting-page__pub-links">
-            <Link to="/tesi" className="waiting-page__pub-btn">
-              <span className="waiting-page__pub-icon">📖</span>
-              <span className="waiting-page__pub-btn-text">
-                <strong>Vol. 1 · Tesi di Ricerca</strong>
-                <small>17×24 cm · Adobe Publish Online</small>
-              </span>
-              <span className="waiting-page__pub-arrow">→</span>
-            </Link>
-            <Link to="/brandmanual" className="waiting-page__pub-btn">
-              <span className="waiting-page__pub-icon">📕</span>
-              <span className="waiting-page__pub-btn-text">
-                <strong>Vol. 2 · Brand Manual</strong>
-                <small>24×24 cm · Linee guida operative</small>
-              </span>
-              <span className="waiting-page__pub-arrow">→</span>
-            </Link>
-          </div>
         </div>
       </main>
 
