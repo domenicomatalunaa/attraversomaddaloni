@@ -112,10 +112,10 @@ export default function PdfViewer({ volume }) {
       const canvasLeft = leftCanvasRef.current
 
       if (canvasLeft) {
-        canvasLeft.width = viewportLeft.width
-        canvasLeft.height = viewportLeft.height
-        canvasLeft.style.width = `${Math.floor(viewportLeft.width / dpr)}px`
-        canvasLeft.style.height = `${Math.floor(viewportLeft.height / dpr)}px`
+        canvasLeft.width = Math.round(viewportLeft.width)
+        canvasLeft.height = Math.round(viewportLeft.height)
+        canvasLeft.style.width = `${Math.round(viewportLeft.width / dpr)}px`
+        canvasLeft.style.height = `${Math.round(viewportLeft.height / dpr)}px`
 
         const ctxLeft = canvasLeft.getContext('2d')
         ctxLeft.imageSmoothingEnabled = true
@@ -134,10 +134,10 @@ export default function PdfViewer({ volume }) {
         const pageRight = await pdfDoc.getPage(pageNumRight)
         const viewportRight = pageRight.getViewport({ scale: finalScale * dpr })
 
-        canvasRight.width = viewportRight.width
-        canvasRight.height = viewportRight.height
-        canvasRight.style.width = `${Math.floor(viewportRight.width / dpr)}px`
-        canvasRight.style.height = `${Math.floor(viewportRight.height / dpr)}px`
+        canvasRight.width = Math.round(viewportRight.width)
+        canvasRight.height = Math.round(viewportRight.height)
+        canvasRight.style.width = `${Math.round(viewportRight.width / dpr)}px`
+        canvasRight.style.height = `${Math.round(viewportRight.height / dpr)}px`
 
         const ctxRight = canvasRight.getContext('2d')
         ctxRight.imageSmoothingEnabled = true
